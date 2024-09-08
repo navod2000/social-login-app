@@ -31,3 +31,5 @@ Route::middleware([
 Route::get('auth/google',[GoogleController::class,'googlepage']);
 
 Route::get('auth/google/callback',[GoogleController::class,'googlecallback']);
+Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+
