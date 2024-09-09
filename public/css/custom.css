@@ -1,0 +1,7 @@
+.nav-link {
+    margin-right: 20px; /* Add spacing between the links */
+}
+
+.nav-link:last-child {
+    margin-right: 0; /* Ensure the last link doesn't have extra margin */
+}

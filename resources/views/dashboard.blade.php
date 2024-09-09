@@ -1,28 +1,28 @@
 <x-app-layout>
-    <header class="bg-white shadow">
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    </head>
+
+    <header class="bg-gray-800 shadow">
         <div class="max-w-7xl mx-auto py-6 px-4">
             <div class="flex justify-between items-center">
-                <h1 class="text-xl font-semibold text-gray-900 font-sans">Dashboard</h1>
+                <h1 class="text-xl font-semibold text-white font-sans">Welcome, {{ Auth::user()->name }}</h1>
 
-                <!-- Settings Icon Button -->
-                <button class="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900">
-                    <!-- SVG Icon -->
-                </button>
-
-                <!-- Logout Button -->
-                <form method="POST" action="{{ route('logout') }}" class="ml-4">
-                    @csrf
-                    <button type="submit" class="bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700">
-                        Logout
-                    </button>
-                </form>
+                <!-- Navigation Links -->
+                <nav class="flex space-x-4">
+                    <a href="/about" class="nav-link text-white hover:text-gray-200">About Me</a>
+                    <a href="/contact" class="nav-link text-white hover:text-gray-200">Contact Me</a>
+                </nav>
             </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto py-6 px-4">
-        <div class="bg-white shadow rounded-lg p-6 flex items-center justify-center h-96">
-            <p class="text-gray-600 text-center font-sans">You're successfully logged in!</p>
+        <div class="bg-gray-700 shadow-lg rounded-lg p-6 flex items-center justify-center h-96">
+            <p class="text-black-400 text-center font-Arial text-lg">You're successfully logged in, {{ Auth::user()->name }}!</p>
+            <div class="mt-4">
+                <p class="text-white">Your email: {{ Auth::user()->email }}</p>
+            </div>
         </div>
     </main>
 </x-app-layout>
